@@ -1,47 +1,27 @@
-kill @e[tag=tls, type=#config:__class]
+function config:hud/chat/info_dialog
 
-scoreboard players reset * tms.const
-scoreboard players reset * tms.temp
-scoreboard players reset * tms.value
-scoreboard players reset * tms.var
-scoreboard players reset * tls.rank
-scoreboard players reset * tls.id
-scoreboard players reset * tls.toggle__start
-scoreboard players reset * tls.toggle__checkpoint
-scoreboard players reset * tls.toggle__finish
-scoreboard players reset * tls.path
-scoreboard players reset * tls.mode
-scoreboard players reset * tls.terrain
-scoreboard players reset * tls.rules
-scoreboard players reset * tls.record
-scoreboard players reset * tls.play_record
-scoreboard players reset * tls.item__pseudo
-scoreboard players reset * tls.nb__item__pseudo
-scoreboard players reset * tls.curr__time
-scoreboard players reset * tls.curr__ms
-scoreboard players reset * tls.curr__sec
-scoreboard players reset * tls.curr__min
-scoreboard players reset * tls.best__time
-scoreboard players reset * tls.best__ms
-scoreboard players reset * tls.best__sec
-scoreboard players reset * tls.best__min
-scoreboard players reset * tls.pos_x
-scoreboard players reset * tls.pos_z
-scoreboard players reset * tls.pos_ox
-scoreboard players reset * tls.pos_oz
-scoreboard players reset * tls.dx
-scoreboard players reset * tls.dz
-scoreboard players reset * tls.progress
-scoreboard players reset * tls.sort
-scoreboard players reset * tls_Properties
-scoreboard players reset * tls_Path
-scoreboard players reset * tls_Mode
-scoreboard players reset * tls_Toggle
+kill @e[tag=config, type=#config:__class]
 
-scoreboard players set %tls_milliseconde tms.const 20
-scoreboard players set %tls_seconde tms.const 60
-scoreboard players set %tls_minute tms.const 1200
-scoreboard players set %tls_hour tms.const 72000
+scoreboard players reset * config.const
+scoreboard players reset * config.tmp
+scoreboard players reset * config.val
+scoreboard players reset * config.toggle__start
+scoreboard players reset * config.toggle__checkpoint
+scoreboard players reset * config.toggle__finish
+scoreboard players reset * config.path
+scoreboard players reset * config.mode
+scoreboard players reset * config.terrain
+scoreboard players reset * config.rules
+scoreboard players reset * config__Properties
+scoreboard players reset * config__Path
+scoreboard players reset * config__Mode
+scoreboard players reset * config__Toggle
+
+scoreboard players set %config__milliseconde config.const 20
+scoreboard players set %config__seconde config.const 60
+scoreboard players set %config__minute config.const 1200
+scoreboard players set %config__hour config.const 72000
+scoreboard players set %config__minus_one config.const -1
 
 advancement revoke @a only config:tools/open open
 advancement revoke @a only config:tools/uninstall datapack
@@ -60,56 +40,56 @@ advancement revoke @a only config:tools/mode/runner has_placed
 advancement revoke @a only config:tools/edit/terrain/pos_1 has_pos_1
 advancement revoke @a only config:tools/edit/terrain/pos_2 has_pos_2
 
-team add tls_bad
-team add tls_good
-team add tls_ghost
-team modify tls_bad color red
-team modify tls_good color green
-team modify tls_ghost color gray
+team add config__bad
+team add config__good
+team add config__ghost
+team modify config__bad color red
+team modify config__good color green
+team modify config__ghost color gray
 
-tag @a remove tls_stg__disable
-tag @a remove tls_stg__activate
-tag @a remove tls_stg__ghost_properties
-tag @a remove tls_stg__config
-tag @a remove tls_stg__confirm
-tag @a remove tls__edit_terrain__no_clone
-tag @a remove tls__edit_terrain__has_fill
-tag @a remove tls_target__start
-tag @a remove tls_target__checkpoint
-tag @a remove tls_target__finish
-tag @a remove tls_target__kart
-tag @a remove tls_target__boat
-tag @a remove tls_target__runner
-tag @a remove tls_target__path
-tag @a remove tls_target__
-tag @a remove tls_record__1
-tag @a remove tls_record__2
-tag @a remove tls_record__3
-tag @a remove tls_record__4
-tag @a remove tls_record__5
-tag @a remove tls_record__6
-tag @a remove tls_record__7
-tag @a remove tls_record__8
-tag @a remove tls_record__9
-tag @a remove tls_record__10
-tag @a remove tls_record__11
-tag @a remove tls_record__12
-tag @a remove tls_play_record__1
-tag @a remove tls_play_record__2
-tag @a remove tls_play_record__3
-tag @a remove tls_play_record__4
-tag @a remove tls_play_record__5
-tag @a remove tls_play_record__6
-tag @a remove tls_play_record__7
-tag @a remove tls_play_record__8
-tag @a remove tls_play_record__9
-tag @a remove tls_play_record__10
-tag @a remove tls_play_record__11
-tag @a remove tls_play_record__12
-tag @a remove tls_racer
-tag @a remove tls_has__ghost
-tag @a remove tls_has__lakitu
-tag @a[tag=tls_handler] add tls_stg__closed
+tag @a remove config__disable
+tag @a remove config__activate
+tag @a remove config__ghost_properties
+tag @a remove config.
+tag @a remove config__confirm
+tag @a remove config___edit__terrain__no_clone
+tag @a remove config___edit__terrain__has_fill
+tag @a remove config__target__start
+tag @a remove config__target__checkpoint
+tag @a remove config__target__finish
+tag @a remove config__target__kart
+tag @a remove config__target__boat
+tag @a remove config__target__runner
+tag @a remove config__target__path
+tag @a remove config__target.
+tag @a remove br__record__1
+tag @a remove br__record__2
+tag @a remove br__record__3
+tag @a remove br__record__4
+tag @a remove br__record__5
+tag @a remove br__record__6
+tag @a remove br__record__7
+tag @a remove br__record__8
+tag @a remove br__record__9
+tag @a remove br__record__10
+tag @a remove br__record__11
+tag @a remove br__record__12
+tag @a remove br__play_record__1
+tag @a remove br__play_record__2
+tag @a remove br__play_record__3
+tag @a remove br__play_record__4
+tag @a remove br__play_record__5
+tag @a remove br__play_record__6
+tag @a remove br__play_record__7
+tag @a remove br__play_record__8
+tag @a remove br__play_record__9
+tag @a remove br__play_record__10
+tag @a remove br__play_record__11
+tag @a remove br__play_record__12
+tag @a remove br__racer
+tag @a remove br__has__lakitu
+tag @a remove config__has__ghost
+tag @a[tag=config__handler] add config__closed
 
 team leave @a
 
@@ -134,7 +114,6 @@ clear @a #config:config[custom_data={pseudo: 1b, config: 1b}]
 data remove storage config:settings start
 data remove storage config:settings finish
 data remove storage config:settings checkpoint
-data remove storage config:settings kart
 data remove storage config:settings boat
 data remove storage config:settings setblock
 data remove storage config:settings fill
@@ -151,5 +130,5 @@ data remove storage config:inventory entity
 data remove storage config:inventory terrain
 data remove storage config:inventory tools
 data remove storage config:player rot
-data remove storage tls:racer id
-data remove storage tls:racer sort
+data remove storage br:racer id
+data remove storage br:racer sort

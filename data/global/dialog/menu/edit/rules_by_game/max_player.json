@@ -1,0 +1,34 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Max Players",
+		"color": "#60A5FA"
+	},
+	"body": {
+		"type": "item",
+		"item": {
+			"id": "player_head"
+		}
+	},
+	"inputs": [
+		{"type": "number_range", "key":        "boat_race__max_player", "label": {"text":        "Boat Race", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max player", "color":  "white"}], "color":    "aqua", "bold": true}, "start": 2, "end": 12, "step": 1, "initial":  9},
+		{"type": "number_range", "key":    "burn_survival__max_player", "label": {"text":    "Burn Survival", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max player", "color":  "white"}], "color": "#FF4500", "bold": true}, "start": 2, "end": 12, "step": 1, "initial":  5},
+		{"type": "number_range", "key":             "golf__max_player", "label": {"text":             "Golf", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max player", "color":  "white"}], "color": "#00C957", "bold": true}, "start": 2, "end": 12, "step": 1, "initial":  2},
+		{"type": "number_range", "key":      "jump_league__max_player", "label": {"text":      "Jump League", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max player", "color":  "white"}], "color": "#FFD700", "bold": true}, "start": 2, "end": 12, "step": 1, "initial": 12},
+		{"type": "number_range", "key":           "spleef__max_player", "label": {"text":           "Spleef", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max player", "color":  "white"}], "color": "#DCDCDC", "bold": true}, "start": 2, "end": 12, "step": 1, "initial":  5},
+		{"type": "number_range", "key":   "survive_warden__max_player", "label": {"text":   "Survive Warden", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max player", "color":  "white"}], "color": "#0D7377", "bold": true}, "start": 2, "end": 12, "step": 1, "initial":  9},
+		{"type": "number_range", "key":          "thimble__max_player", "label": {"text":          "Thimble", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max player", "color":  "white"}], "color": "#DA70D6", "bold": true}, "start": 2, "end": 12, "step": 1, "initial": 11},
+		{"type": "number_range", "key": "trident_shooting__max_player", "label": {"text": "Trident Shooting", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max player", "color":  "white"}], "color": "#6A0DAD", "bold": true}, "start": 2, "end": 12, "step": 1, "initial":  9}
+	],
+	"can_close_with_escape": true,
+	"pause": false,
+	"columns": 3,
+	"actions": [
+		{"label": {"text": "Confirm", "color": "green", "bold": true}, "action": {"type": "dynamic/run_command", "template": "function config:events/edit/rules/set_max_player {boat_race: \"$(boat_race__max_player)\", burn_survival: \"$(burn_survival__max_player)\", golf: \"$(golf__max_player)\", jump_league: \"$(jump_league__max_player)\", spleef: \"$(spleef__max_player)\", survive_warden: \"$(survive_warden__max_player)\", thimble: \"$(thimble__max_player)\", trident_shooting: \"$(trident_shooting__max_player)\", global: \"$(global__max_player)\"}"}},
+
+		{"label": {"text": 		     "Back to ", "extra": [{"text": "rules by game ", "color": "yellow", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog": "global:menu/edit/rules_by_game"}},
+		{"label": {"text": 	         "Back to ", "extra": [{"text":          "edit ", "color":   "gold", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog":               "global:menu/edit"}},
+		{"label": {"text": 		     "Back to ", "extra": [{"text":           "menu", "color":   "gold", "italic": true}]}, 		"action": {"type": "show_dialog", "dialog": 		   	       "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																				    "action": {"type": "show_dialog", "dialog":     	         "global:config"}}
+	]
+}

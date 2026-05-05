@@ -1,0 +1,41 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Ghost",
+		"color": "gray"
+	},
+    "inputs": [
+		{
+			"type": "single_option",
+			"key": "ghost_camera",
+			"label": "Camera",
+			"options": [
+				{"id": "free_cam", "display": {"text": "Free Camera", "color":         "blue", "bold": true}, "initial": false},
+				{"id": "spectate", "display": {"text":    "Spectate", "color": "light_purple", "bold": true}, "initial":  true}
+			]
+		},
+        {
+			"type": "single_option",
+			"key": "ghost_player",
+			"label": "player",
+			"options": [
+				{"id": "best_player", "display": {"text": "Best Player", "color":      "gold", "bold": true}, "initial":  true},
+				{"id":  "all_player", "display": {"text":  "All player", "color":     "white", "bold": true}, "initial": false},
+                {"id":   "no_player", "display": {"text":   "No Player", "color": "dark_gray", "bold": true}, "initial": false}
+			]
+		}
+	],
+	"can_close_with_escape": true,
+	"pause": true,
+	"after_action": "close",
+	"columns": 2,
+	"actions": [
+		{"label": {"text": "Confirm", "color": "green", "bold": true}, "action": {"type": "dynamic/run_command", "template": "data modify storage config:settings ghost set value {properties: {camera: \"$(ghost_camera)\", player: \"$(ghost_player)\"}}"}},
+
+		{"label": { "text": 	      "Back to ", "extra": [{"text":     "ghost ", "color": "gray", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog":   "global:menu/games/boat_race/ghost"}},
+		{"label": { "text": 	      "Back to ", "extra": [{"text": "boat race ", "color": "aqua", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog":   	   "global:menu/games/boat_race"}},
+		{"label": { "text": 	      "Back to ", "extra": [{"text":     "games ", "color":  "red", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog":   		   		 "global:menu/games"}},
+		{"label": { "text": 	      "Back to ", "extra": [{"text":       "menu", "color": "gold", "italic": true}]}, 		   "action": {"type": "show_dialog", "dialog":   			     	   "global:menu"}},
+		{"label": { "text": "Back to main menu"}, 																 		   	   "action": {"type": "show_dialog", "dialog": 				   		 "global:config"}}
+	]
+}

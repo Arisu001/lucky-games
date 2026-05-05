@@ -1,0 +1,29 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Edit",
+		"color": "gold"
+	},
+	"body": {
+		"type": "item",
+		"item": {
+			"id": "crafting_table",
+			"count": 1
+		},
+		"description": {
+			"text": "Browse the edit menu"
+		}
+	},
+	"can_close_with_escape": true,
+	"pause": true,
+	"after_action": "close",
+	"columns": 3,
+	"actions": [
+		{"label": {"text":  "Global Rules", "color":   "white", "bold": true}, "action": {"type": "show_dialog", "dialog":  "global:menu/edit/global_rules"}},
+		{"label": {"text": "Rules by Game", "color":  "yellow", "bold": true}, "action": {"type": "show_dialog", "dialog": "global:menu/edit/rules_by_game"}},
+		{"label": {"text":       "Terrain", "color": "#5DBB63", "bold": true}, "action": {"type": "show_dialog", "dialog":       "global:menu/edit/terrain"}},
+		
+		{"label": {"text": 		     "Back to ", "extra": [{"text": "menu", "color": "gold", "italic": true}]}, "action": {"type": "show_dialog", "dialog":   "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																"action": {"type": "show_dialog", "dialog": "global:config"}}
+	]
+}

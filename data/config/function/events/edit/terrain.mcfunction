@@ -1,2 +1,2 @@
-execute if entity @s[advancements={config:tools/edit/terrain/pos_1=true}] at @e[tag=tls_cursor_trg] run function config:events/edit/terrain/mode/setblock with storage config:settings edit.terrain.setblock
-execute if entity @s[advancements={config:tools/edit/terrain/pos_1=true}] at @e[tag=tls_cursor_trg] run function config:events/edit/terrain/mode/fill with storage config:settings edit.terrain.fill
+execute if entity @s[advancements={config:tools/edit/terrain/pos_1=true}] if score @s config.terrain matches 1 at @e[tag=config__cursor_trg] run function config:events/edit/terrain/mode/setblock with storage config:settings edit.terrain.setblock
+execute if entity @s[advancements={config:tools/edit/terrain/pos_1=true}] if score @s config.terrain matches 2 at @e[tag=config__cursor_trg] run function config:events/edit/terrain/mode/fill with storage config:settings edit.terrain.fill

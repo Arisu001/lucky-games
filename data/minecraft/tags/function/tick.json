@@ -1,6 +1,15 @@
 {
+    "replace": false,
     "values": [
         "config:tick",
-        "tls:tick"
+
+        "boat_race:tick",
+        "burn_survival:tick",
+        "golf:tick",
+        "jump_league:tick",
+        "spleef:tick",
+        "survive_warden:tick",
+        "thimble:tick",
+        "trident_shooting:tick"
     ]
 }

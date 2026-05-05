@@ -1,0 +1,41 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Burn Survival",
+		"color": "#FF4500",
+		"extra": [
+			{
+				"text": ": ",
+				"color": "yellow"
+			},
+			{
+				"text": "Max Time",
+				"color": "#EF4444"
+			}
+		]
+	},
+	"body": {
+		"type": "item",
+		"item": {
+			"id": "clock"
+		}
+	},
+	"inputs": [
+		{"type": "number_range", "key":    "burn_survival__hour", "label":         "Hour", "start": 0, "end": 59, "step": 1, "initial":  1},
+		{"type": "number_range", "key":  "burn_survival__minute", "label":       "Minute", "start": 0, "end": 59, "step": 1, "initial": 15},
+		{"type": "number_range", "key": "burn_survival__seconde", "label":      "Seconde", "start": 0, "end": 59, "step": 1, "initial":  0},
+		{"type": "number_range", "key":    "burn_survival__tick", "label": "Milliseconde", "start": 0, "end": 20, "step": 1, "initial":  0}
+	],
+	"can_close_with_escape": true,
+	"pause": false,
+	"columns": 4,
+	"actions": [
+		{"label": {"text": "Confirm", "color": "green", "bold": true}, "action": {"type": "dynamic/run_command", "template": "function config:events/edit/rules/set_time/burn_survival {burn_survival__hour: \"$(burn_survival__hour)\", burn_survival__minute: \"$(burn_survival__minute)\", burn_survival__seconde: \"$(burn_survival__seconde)\", burn_survival__tick: \"$(burn_survival__tick)\", global__hour: \"$(global__hour)\", global__minute: \"$(global__minute)\", global__seconde: \"$(global__seconde)\", global__tick: \"$(global__tick)\"}"}},
+
+		{"label": {"text": 	         "Back to ", "extra": [{"text":      "max time ", "color": "#EF4444", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog": "global:menu/edit/rules_by_game/max_time"}},
+		{"label": {"text": 	         "Back to ", "extra": [{"text": "rules by game ", "color":  "yellow", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog":          "global:menu/edit/rules_by_game"}},
+		{"label": {"text": 	         "Back to ", "extra": [{"text":          "edit ", "color":    "gold", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog":                        "global:menu/edit"}},
+		{"label": {"text": 		     "Back to ", "extra": [{"text":           "menu", "color":    "gold", "italic": true}]}, 		 "action": {"type": "show_dialog", "dialog":                             "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																				     "action": {"type": "show_dialog", "dialog":                           "global:config"}}
+	]
+}

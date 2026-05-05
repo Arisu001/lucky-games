@@ -1,0 +1,22 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Global Rules",
+		"color": "white"
+	},
+	"can_close_with_escape": true,
+	"pause": true,
+	"after_action": "close",
+	"columns": 3,
+	"actions": [	
+		{"label": {"text":    "Max time", "color": "#EF4444", "bold": true}, "action": {"type": "show_dialog", "dialog":    "global:menu/edit/global_rules/max_time"}},
+		{"label": {"text":  "Max player", "color": "#60A5FA", "bold": true}, "action": {"type": "show_dialog", "dialog":  "global:menu/edit/global_rules/max_player"}},
+		{"label": {"text":     "Ranking", "color": "#FFD700", "bold": true}, "action": {"type": "show_dialog", "dialog":     "global:menu/edit/global_rules/ranking"}},
+		{"label": {"text": "Respawnable", "color": "#10B981", "bold": true}, "action": {"type": "show_dialog", "dialog": "global:menu/edit/global_rules/respawnable"}},
+		{"label": {"text":  "Auto reset", "color": "#E879F9", "bold": true}, "action": {"type": "show_dialog", "dialog":  "global:menu/edit/global_rules/auto_reset"}},
+		
+		{"label": {"text": 		     "Back to ", "extra": [{"text": "edit ", "color": "gold", "italic":   true}, "menu"]}, "action": {"type": "show_dialog", "dialog": "global:menu/edit"}},
+		{"label": {"text": 	         "Back to ", "extra": [{"text":  "menu", "color": "gold", "italic": true}]}, 		   "action": {"type": "show_dialog", "dialog":      "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																  		   "action": {"type": "show_dialog", "dialog":    "global:config"}}
+	]
+}

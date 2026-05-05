@@ -10,7 +10,7 @@
         "name: lucky_games",
         "action: config",
         "result: play",
-        "version: 2.0.0b",
+        "version: 2.1.0b",
         "created by: Arisu001"
         ]
     },

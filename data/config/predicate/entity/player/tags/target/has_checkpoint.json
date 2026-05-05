@@ -3,7 +3,7 @@
     "entity": "this",
     "predicate": {
         "nbt": {
-            "Tags": ["tls_target__checkpoint"]
+            "Tags": ["config__target__checkpoint"]
         }
     }
 }

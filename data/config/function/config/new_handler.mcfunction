@@ -1,4 +1,4 @@
-tag @s add tls_handler
-tag @s add tls_handler__fix
+tag @s add config__handler
+tag @s add config__handler_fix
 
-scoreboard players set $tls_root__handler tms.var 1
+scoreboard players set $config__root__handler config.val 1

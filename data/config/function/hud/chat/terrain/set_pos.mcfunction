@@ -1,1 +1,0 @@
-$execute if score @s tls.terrain matches 1 run tellraw @s [{text: "", color: "light_purple"}, {text: "[", color: "white"}, {text: "$(name)", color: "$(color)"}, {text: "] ", color: "white"}, {text: "> ", color: "yellow"}, "$(block) set to ($(x1), $(y1), $(z1)) in $(replace_mode) mode"]

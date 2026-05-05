@@ -1,5 +1,15 @@
 {
+    "replace": false,
     "values": [
-        "config:load"
+        "config:load",
+
+        "boat_race:load",
+        "burn_survival:load",
+        "golf:load",
+        "jump_league:load",
+        "spleef:load",
+        "survive_warden:load",
+        "thimble:load",
+        "trident_shooting:load"
     ]
 }

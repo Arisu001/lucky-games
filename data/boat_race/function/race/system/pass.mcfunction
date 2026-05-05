@@ -1,0 +1,1 @@
+$execute if score @a[scores={br.rank=$(br__b)}, limit=1] br.progress > @a[scores={br.rank=$(br__a)}, limit=1] br.progress run scoreboard players operation @a[scores={br.rank=$(br__b)}] br.rank >< @a[scores={br.rank=$(br__a)}] br.rank

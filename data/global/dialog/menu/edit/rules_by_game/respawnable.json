@@ -1,0 +1,36 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Respawnable",
+		"color": "#10B981"
+	},
+	"body": {
+		"type": "item",
+		"item": {
+			"id": "ender_eye"
+		}
+	},
+	"inputs": [
+		{"type": "boolean", "key":        "boat_race__respawnable", "label": {"text":   " Boat Race        ", "color":    "aqua", "bold": true}, "initial":  true, "on_true": "enabled", "on_false": "disabled"},
+		{"type": "boolean", "key":    "burn_survival__respawnable", "label": {"text":    " Burn Survival   ", "color": "#FF4500", "bold": true}, "initial":  true, "on_true": "enabled", "on_false": "disabled"},
+		{"type": "boolean", "key":             "golf__respawnable", "label": {"text": " Golf               ", "color": "#00C957", "bold": true}, "initial": false, "on_true": "enabled", "on_false": "disabled"},
+		{"type": "boolean", "key":      "jump_league__respawnable", "label": {"text":    " Jump League     ", "color": "#FFD700", "bold": true}, "initial":  true, "on_true": "enabled", "on_false": "disabled"},
+		{"type": "boolean", "key":           "spleef__respawnable", "label": {"text":  " Spleef            ", "color": "#DCDCDC", "bold": true}, "initial":  true, "on_true": "enabled", "on_false": "disabled"},
+		{"type": "boolean", "key":   "survive_warden__respawnable", "label": {"text":     " Survive Warden ", "color": "#0D7377", "bold": true}, "initial":  true, "on_true": "enabled", "on_false": "disabled"},
+		{"type": "boolean", "key":          "thimble__respawnable", "label": {"text":  " Thimble           ", "color": "#DA70D6", "bold": true}, "initial":  true, "on_true": "enabled", "on_false": "disabled"},
+		{"type": "boolean", "key": "trident_shooting__respawnable", "label": {"text":    " Trident Shooting", "color": "#6A0DAD", "bold": true}, "initial": false, "on_true": "enabled", "on_false": "disabled"}
+	
+	],
+	"can_close_with_escape": true,
+	"pause": true,
+	"after_action": "close",
+	"columns": 3,
+	"actions": [
+		{"label": {"text": "Confirm", "color": "green", "bold": true}, "action": {"type": "dynamic/run_command", "template": "function config:events/edit/rules/respawnable {boat_race: \"$(boat_race__respawnable)\", burn_survival: \"$(burn_survival__respawnable)\", golf: \"$(golf__respawnable)\", jump_league: \"$(jump_league__respawnable)\", spleef: \"$(spleef__respawnable)\", survive_warden: \"$(survive_warden__respawnable)\", thimble: \"$(thimble__respawnable)\", trident_shooting: \"$(trident_shooting__respawnable)\", global: \"$(global__respawnable)\"}"}},
+
+		{"label": {"text": 		     "Back to ", "extra": [{"text": "rules by game ", "color": "yellow", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog": "global:menu/edit/rules_by_game"}},
+		{"label": {"text": 	         "Back to ", "extra": [{"text":          "edit ", "color":   "gold", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog":               "global:menu/edit"}},
+		{"label": {"text": 		     "Back to ", "extra": [{"text":           "menu", "color":   "gold", "italic": true}]}, 		"action": {"type": "show_dialog", "dialog": 		   	       "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																				    "action": {"type": "show_dialog", "dialog":     	         "global:config"}}
+	]
+}

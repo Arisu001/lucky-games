@@ -1,3 +1,3 @@
 function config:player/reset
 
-tag @s add tls_stg__confirm
+tag @s add config__done

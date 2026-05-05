@@ -1,1 +1,0 @@
-$execute if score @a[scores={tls.rank=$(tls_b)}, limit=1] tls.progress > @a[scores={tls.rank=$(tls_a)}, limit=1] tls.progress run scoreboard players operation @a[scores={tls.rank=$(tls_b)}] tls.rank >< @a[scores={tls.rank=$(tls_a)}] tls.rank

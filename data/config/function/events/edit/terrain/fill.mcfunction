@@ -3,4 +3,5 @@ $data modify storage config:settings edit.terrain.fill.mode set value $(fill_mod
 $data modify storage config:settings edit.terrain.fill.replace_block set value $(replace_block)
 $data modify storage config:settings edit.terrain.fill.replace_mode set value $(replace_mode)
 
-scoreboard players set $tls_edit_terrain__tmp tms.var 2
+# Bookmark the rules page
+scoreboard players set $config__edit__terrain__tmp config.val 2

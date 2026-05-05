@@ -1,3 +1,3 @@
 advancement revoke @s only config:tools/uninstall datapack
 
-execute if score $tls_double__right_click tms.var matches 2.. run function #config:uninstall
+execute if score $config__double__right_click config.val matches 2.. run function #config:uninstall

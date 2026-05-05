@@ -1,7 +1,7 @@
 # Cursor
-tp @e[tag=tls_cursor_trg] ~ 319 ~ ~ ~
-kill @e[tag=tls_cursor_trg]
-summon shulker ~ ~ ~ {Tags: ["tls_cursor_trg", "tls"], Team: "tls_good", Silent: 1b, Invulnerable: 1b, NoAI: 1b, active_effects: [{id: "invisibility", amplfier: 128, duration: -1, show_particles: 0b}, {id: "glowing", amplfier: 128, duration: -1, show_particles: 0b}]}
+tp @e[tag=config__cursor_trg] ~ 319 ~ ~ ~
+kill @e[tag=config__cursor_trg]
+summon shulker ~ ~ ~ {Tags: ["config__cursor_trg", "config"], Team: "config__good", Silent: 1b, Invulnerable: 1b, NoAI: 1b, active_effects: [{id: "invisibility", amplfier: 128, duration: -1, show_particles: 0b}, {id: "glowing", amplfier: 128, duration: -1, show_particles: 0b}]}
 
 function config:player/position
 
@@ -17,5 +17,7 @@ execute if entity @s[advancements={config:tools/mode/boat=true}] run function co
 execute if entity @s[advancements={config:tools/mode/runner=true}] run function config:raycast/place {y: 1.5, entity: "text_display", type: "runner", category: "mode", display: "CustomName", name: "", tag: "", color: "gold", distance: 0.0f, component_1: "Rotation", component_2: "", component_3: "", component_4: "", component_5: "", component_6: ""}
 
 # Terrain = Setblock  |  Fill  |  Clone  |  Fillbiome
-execute if entity @s[advancements={config:tools/edit/terrain/pos_1=true}, scores={tls.terrain=1}] run function config:raycast/place {y: 0, entity: "text_display", type: "setblock", category: "terrain", display: "text", name: "SETBLOCK", tag: "", color: "white", distance: 0.0f, component_1: "", component_2: "", component_3: "", component_4: "", component_5: "", component_6: ""}
-execute if score @s tls.terrain matches 2 run function config:raycast/place {y: 0, entity: "text_display", type:     "fill", category: "terrain", display: "text", name:     "FILL", tag: "", color: "green", distance: 0.0f, component_1: "", component_2: "", component_3: "", component_4: "", component_5: "", component_6: ""}
+execute if entity @s[advancements={config:tools/edit/terrain/pos_1=true}, scores={config.terrain=1}] run function config:raycast/place {y: 0, entity: "text_display", type: "setblock", category: "terrain", display: "text", name: "Setblock", tag: "setblock", color: "white", distance: 0.0f, component_1: "", component_2: "", component_3: "", component_4: "", component_5: "", component_6: ""}
+execute if entity @s[advancements={config:tools/edit/terrain/pos_1=true}, scores={config.terrain=2}] run function config:raycast/place {y: 0, entity: "text_display", type:     "fill", category: "terrain", display: "text", name:     "Fill", tag:     "fill", color: "green", distance: 0.0f, component_1: "", component_2: "", component_3: "", component_4: "", component_5: "", component_6: ""}
+
+execute if entity @s[advancements={config:tools/edit/terrain/pos_2=true}, scores={config.terrain=2}] run function config:raycast/place {y: 0, entity: "text_display", type:     "fill", category: "terrain", display: "text", name:     "Fill", tag: "fill", color: "green", distance: 0.0f, component_1: "", component_2: "", component_3: "", component_4: "", component_5: "", component_6: ""}

@@ -1,0 +1,128 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Clone",
+		"color": "light_purple"
+	},
+	"body": {
+		"type": "item",
+		"item": {
+			"id": "structure_block"
+		}
+	},
+	"inputs": [
+		{
+			"type": "boolean",
+			"key": "from",
+			"label": {
+				"text": "From",
+				"color": "gray"
+			},
+			"initial": false,
+			"on_true": "from",
+			"on_false": "false"
+		},
+		{
+			"type": "text",
+			"key": "from_dimension",
+			"label": {
+				"text": "From = True",
+				"color": "aqua"
+			},
+			"initial": "\"example:minigames/my_dimension\"",
+			"max_length": 100
+		},
+		{
+			"type": "boolean",
+			"key": "to",
+			"label": {
+				"text": "To   ",
+				"color": "gray"
+			},
+			"initial": true,
+			"on_true": "to",
+			"on_false": "false"
+		},
+		{
+			"type": "text",
+			"key": "to_dimension",
+			"label": {
+				"text": "To = True",
+				"color": "light_purple"
+			},
+			"initial": "overworld",
+			"max_length": 100
+		},
+		{
+			"type": "single_option",
+			"key": "mask_mode",
+			"label": {
+				"text": "Mode",
+				"color": "white"
+			},
+			"options": [
+				{"id": "filtered", "display": {"text": "Filtered", "color": "gray", "bold": true}, "initial": false},
+				{"id":   "masked", "display": {"text":   "Masked", "color": "gray", "bold": true}, "initial": false},
+				{"id":  "replace", "display": {"text":  "Replace", "color": "gray", "bold": true}, "initial": false},
+				{"id":   "strict", "display": {"text":   "Strict", "color": "gray", "bold": true}, "initial": false}
+			]
+		},
+		{
+			"type": "single_option",
+			"key": "mask_mode_strict",
+			"label": {
+				"text": "Only in " ,
+				"color": "white",
+				"extra": [
+					{"text": "Strict ", "color": "red"},
+					"mode"
+				]
+			},
+			"options": [
+				{"id": "filtered", "display": {"text": "Filtered", "color": "gray", "bold": true}, "initial": false},
+				{"id":   "masked", "display": {"text":   "Masked", "color": "gray", "bold": true}, "initial": false},
+				{"id":  "replace", "display": {"text":  "Replace", "color": "gray", "bold": true}, "initial": false}
+			]
+		},
+		{
+			"type": "text",
+			"key": "clone_block",
+			"label": {
+				"text": "Only in ",
+				"color": "aqua",
+				"extra": [
+					{"text": "Filtered", "color": "red"},
+					" & ",
+					{"text": "Strict ",  "color": "red"},
+					"modes"
+				]
+			},
+			"initial": "\"#logs\"",
+			"max_length": 35
+		},
+		{
+			"type": "single_option",
+			"key": "clone_mode",
+			"label": {
+				"text": "Mode",
+				"color": "white"
+			},
+			"options": [
+				{"id":  "force", "display": {"text":  "Force", "color": "gray", "bold": true}, "initial": false},
+				{"id":   "move", "display": {"text":   "Move", "color": "gray", "bold": true}, "initial": false},
+				{"id": "normal", "display": {"text": "normal", "color": "gray", "bold": true}, "initial": false}
+			]
+		}
+	],
+	"can_close_with_escape": true,
+	"pause": false,
+	"columns": 2,
+	"actions": [
+		{"label": {"text": "Confirm", "color": "green", "bold": true}, "action": {"type": "dynamic/run_command", "template": "function config:events/edit/terrain/clone {from: \"$(from)\", from_dimension: \"$(from_dimension)\", to: \"$(to)\", to_dimension: \"$(to_dimension)\", mask_mode: \"$(mask_mode)\", mask_mode_strict: \"$(mask_mode_strict)\",  clone_block: \"$(clone_block)\", clone_mode: \"$(clone_mode)\"}"}},
+
+		{"label": {"text": 		     "Back to ", "extra": [{"text": "terrain ", "color": "#5DBB63", "italic":   true}, "menu"]}, "action": {"type": "show_dialog", "dialog": "global:menu/edit/terrain"}},
+		{"label": {"text": 		     "Back to ", "extra": [{"text":    "edit ", "color":    "gold", "italic":   true}, "menu"]}, "action": {"type": "show_dialog", "dialog": 		 "global:menu/edit"}},
+		{"label": {"text": 		     "Back to ", "extra": [{"text":     "menu", "color":    "gold", "italic": true}]}, 		     "action": {"type": "show_dialog", "dialog": 		 	  "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																				 "action": {"type": "show_dialog", "dialog":            "global:config"}}
+	]
+}

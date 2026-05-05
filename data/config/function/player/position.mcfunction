@@ -1,1 +1,1 @@
-execute store result score $tls_rot_lr tms.var run data get entity @s Rotation[0] 1
+execute store result score $config__rot_lr config.val run data get entity @s Rotation[0] 1

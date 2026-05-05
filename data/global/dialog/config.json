@@ -1,0 +1,26 @@
+{
+	"type": "dialog_list",
+	"title": {
+		"text": "Config",
+		"color": "gray"
+	},
+	"body": {
+		"type": "item",
+		"item": {
+			"id": "compass",
+			"count": 1
+		},
+		"description": {
+			"text": "Browse the menu"
+		}
+	},
+	"can_close_with_escape": true,
+	"pause": true,
+	"after_action": "close",
+	"columns": 2,
+	"dialogs": [
+		"global:menu",
+		"global:properties",
+		"global:help"
+	]
+}

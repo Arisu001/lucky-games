@@ -1,0 +1,40 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Auto Reset",
+		"color": "#E879F9"
+	},
+	"body": {
+		"type": "item",
+		"item": {
+			"id": "redstone_lamp"
+		}
+	},
+	"inputs": [
+		{
+			"type": "boolean", 
+			"key": "global__auto_reset", 
+			"label": {
+				"text": "Reset All", 
+				"color": "#DC2626", 
+				"bold": true
+			}, 
+			"initial": false, 
+			"on_true": "enabled", 
+			"on_false": "disabled"
+		}
+	
+	],
+	"can_close_with_escape": true,
+	"pause": true,
+	"after_action": "close",
+	"columns": 3,
+	"actions": [
+		{"label": {"text": "Confirm", "color": "green", "bold": true}, "action": {"type": "dynamic/run_command", "template": "function config:events/edit/rules/auto_reset {global: \"$(global__auto_reset)\", boat_race: \"$(boat_race__auto_reset)\", burn_survival: \"$(burn_survival__auto_reset)\", golf: \"$(golf__auto_reset)\", jump_league: \"$(jump_league__auto_reset)\", spleef: \"$(spleef__auto_reset)\", survive_warden: \"$(survive_warden__auto_reset)\", thimble: \"$(thimble__auto_reset)\", trident_shooting: \"$(trident_shooting__auto_reset)\"}"}},
+
+		{"label": {"text": 	         "Back to ", "extra": [{"text": "global rules ", "color": "gray", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog": "global:menu/edit/global_rules"}},
+		{"label": {"text": 	         "Back to ", "extra": [{"text":         "edit ", "color": "gold", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog":              "global:menu/edit"}},
+		{"label": {"text": 		     "Back to ", "extra": [{"text":          "menu", "color": "gold", "italic": true}]}, 		 "action": {"type": "show_dialog", "dialog":                   "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																				 "action": {"type": "show_dialog", "dialog":                 "global:config"}}
+	]
+}

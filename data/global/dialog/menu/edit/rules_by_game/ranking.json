@@ -1,0 +1,36 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Ranking",
+		"color": "#FFD700"
+	},
+	"body": {
+		"type": "item",
+		"item": {
+			"id": "nether_star"
+		}
+	},
+	"inputs": [
+		{"type": "single_option", "key":        "boat_race__rankings", "label": {"text":        "Boat Race", "extra": [{"text": ": ", "color": "yellow"}], "color":    "aqua", "bold": true}, "options": [{"id": "top_3", "display": {"text": "Top 3", "color": "gold", "italic": true}, "initial":  true}, {"id": "top_5", "display": {"text": "Top 5", "color": "blue", "italic": true}, "initial": false}, {"id": "top_10", "display": {"text": "Top 10", "color": "green", "italic": true}, "initial": false}]},
+		{"type": "single_option", "key":    "burn_survival__rankings", "label": {"text":    "Burn Survival", "extra": [{"text": ": ", "color": "yellow"}], "color": "#FF4500", "bold": true}, "options": [{"id": "top_3", "display": {"text": "Top 3", "color": "gold", "italic": true}, "initial": false}, {"id": "top_5", "display": {"text": "Top 5", "color": "blue", "italic": true}, "initial":  true}, {"id": "top_10", "display": {"text": "Top 10", "color": "green", "italic": true}, "initial": false}]},
+		{"type": "single_option", "key":             "golf__rankings", "label": {"text":             "Golf", "extra": [{"text": ": ", "color": "yellow"}], "color": "#00C957", "bold": true}, "options": [{"id": "top_3", "display": {"text": "Top 3", "color": "gold", "italic": true}, "initial": false}, {"id": "top_5", "display": {"text": "Top 5", "color": "blue", "italic": true}, "initial":  true}, {"id": "top_10", "display": {"text": "Top 10", "color": "green", "italic": true}, "initial": false}]},
+		{"type": "single_option", "key":      "jump_league__rankings", "label": {"text":      "Jump League", "extra": [{"text": ": ", "color": "yellow"}], "color": "#FFD700", "bold": true}, "options": [{"id": "top_3", "display": {"text": "Top 3", "color": "gold", "italic": true}, "initial": false}, {"id": "top_5", "display": {"text": "Top 5", "color": "blue", "italic": true}, "initial": false}, {"id": "top_10", "display": {"text": "Top 10", "color": "green", "italic": true}, "initial":  true}]},
+		{"type": "single_option", "key":           "spleef__rankings", "label": {"text":           "Spleef", "extra": [{"text": ": ", "color": "yellow"}], "color": "#DCDCDC", "bold": true}, "options": [{"id": "top_3", "display": {"text": "Top 3", "color": "gold", "italic": true}, "initial": false}, {"id": "top_5", "display": {"text": "Top 5", "color": "blue", "italic": true}, "initial" : true}, {"id": "top_10", "display": {"text": "Top 10", "color": "green", "italic": true}, "initial": false}]},
+		{"type": "single_option", "key":   "survive_warden__rankings", "label": {"text":   "Survive Warden", "extra": [{"text": ": ", "color": "yellow"}], "color": "#0D7377", "bold": true}, "options": [{"id": "top_3", "display": {"text": "Top 3", "color": "gold", "italic": true}, "initial":  true}, {"id": "top_5", "display": {"text": "Top 5", "color": "blue", "italic": true}, "initial": false}, {"id": "top_10", "display": {"text": "Top 10", "color": "green", "italic": true}, "initial": false}]},
+		{"type": "single_option", "key":          "thimble__rankings", "label": {"text":          "Thimble", "extra": [{"text": ": ", "color": "yellow"}], "color": "#DA70D6", "bold": true}, "options": [{"id": "top_3", "display": {"text": "Top 3", "color": "gold", "italic": true}, "initial":  true}, {"id": "top_5", "display": {"text": "Top 5", "color": "blue", "italic": true}, "initial": false}, {"id": "top_10", "display": {"text": "Top 10", "color": "green", "italic": true}, "initial": false}]},
+		{"type": "single_option", "key": "trident_shooting__rankings", "label": {"text": "Trident Shooting", "extra": [{"text": ": ", "color": "yellow"}], "color": "#6A0DAD", "bold": true}, "options": [{"id": "top_3", "display": {"text": "Top 3", "color": "gold", "italic": true}, "initial": false}, {"id": "top_5", "display": {"text": "Top 5", "color": "blue", "italic": true}, "initial": false}, {"id": "top_10", "display": {"text": "Top 10", "color": "green", "italic": true}, "initial":  true}]}
+	
+	],
+	"can_close_with_escape": true,
+	"pause": true,
+	"after_action": "close",
+	"columns": 3,
+	"actions": [
+		{"label": {"text": "Confirm", "color": "green", "bold": true}, "action": {"type": "dynamic/run_command", "template": "function config:events/edit/rules/rankings {boat_race: \"$(boat_race__rankings)\", burn_survival: \"$(burn_survival__rankings)\", golf: \"$(golf__rankings)\", jump_league: \"$(jump_league__rankings)\", spleef: \"$(spleef__rankings)\", survive_warden: \"$(survive_warden__rankings)\", thimble: \"$(thimble__rankings)\", trident_shooting: \"$(trident_shooting__rankings)\", global: \"$(global__rankings)\"}"}},
+
+		{"label": {"text": 		     "Back to ", "extra": [{"text": "rules by game ", "color": "yellow", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog": "global:menu/edit/rules_by_game"}},
+		{"label": {"text": 	         "Back to ", "extra": [{"text":          "edit ", "color":   "gold", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog":               "global:menu/edit"}},
+		{"label": {"text": 		     "Back to ", "extra": [{"text":           "menu", "color":   "gold", "italic": true}]}, 		"action": {"type": "show_dialog", "dialog": 		   	       "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																				    "action": {"type": "show_dialog", "dialog":     	         "global:config"}}
+	]
+}

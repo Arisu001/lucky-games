@@ -12,7 +12,7 @@
                 "entity": {
                     "type": "interaction",
                     "nbt": {
-                        "Tags": ["tls__player_cursor__trg"]
+                        "Tags": ["config__player__cursor_trg"]
                     }
                 }
             }

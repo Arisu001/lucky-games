@@ -7,4 +7,5 @@ $data modify storage config:settings edit.terrain.clone.mask_mode_strict set val
 $data modify storage config:settings edit.terrain.clone.block set value $(clone_block)
 $data modify storage config:settings edit.terrain.clone.mode set value $(clone_mode)
 
-scoreboard players set $tls_edit_terrain__tmp tms.var 3
+# Bookmark the rules page
+scoreboard players set $config__edit__terrain__tmp config.val 3

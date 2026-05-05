@@ -3,7 +3,7 @@
     "entity": "this",
     "predicate": {
         "nbt": {
-            "Tags": ["tls__edit_terrain__has_fill"]
+            "Tags": ["config__edit__terrain__has_fill"]
         },
         "equipment": {
             "mainhand": {

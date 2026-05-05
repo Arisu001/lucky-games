@@ -1,0 +1,1 @@
+$tellraw @s [{text: "", color: "light_purple"}, {text: "[", color: "white"}, {text: "$(name)", color: "$(color)"}, {text: "] ", color: "white"}, {text: "> ", color: "yellow"}, "$(block) set to ($(x1), $(y1), $(z1))"]

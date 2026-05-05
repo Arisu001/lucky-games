@@ -3,7 +3,7 @@
     "entity": "this",
     "predicate": {
         "nbt": {
-            "Tags": ["tls_stg__opened"]
+            "Tags": ["config__opened"]
         }
     }
 }

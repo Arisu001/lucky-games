@@ -1,46 +1,55 @@
 function config:hud/chat/datapack_uninstalled
 
 
-kill @e[tag=tls, type=#config:__class]
+kill @e[tag=config, type=#config:__class]
 
-scoreboard objectives remove tms.const
-scoreboard objectives remove tms.temp
-scoreboard objectives remove tms.value
-scoreboard objectives remove tms.var
-scoreboard objectives remove tls.rank
-scoreboard objectives remove tls.id
-scoreboard objectives remove tls.toggle__start
-scoreboard objectives remove tls.toggle__checkpoint
-scoreboard objectives remove tls.toggle__finish
-scoreboard objectives remove tls.path
-scoreboard objectives remove tls.mode
-scoreboard objectives remove tls.terrain
-scoreboard objectives remove tls.rules
-scoreboard objectives remove tls.record
-scoreboard objectives remove tls.play_record
-scoreboard objectives remove tls.item__pseudo
-scoreboard objectives remove tls.nb__item__pseudo
-scoreboard objectives remove tls.curr__time
-scoreboard objectives remove tls.curr__ms
-scoreboard objectives remove tls.curr__sec
-scoreboard objectives remove tls.curr__min
-scoreboard objectives remove tls.best__time
-scoreboard objectives remove tls.best__ms
-scoreboard objectives remove tls.best__sec
-scoreboard objectives remove tls.best__min
-scoreboard objectives remove tls.pos_x
-scoreboard objectives remove tls.pos_z
-scoreboard objectives remove tls.pos_ox
-scoreboard objectives remove tls.pos_oz
-scoreboard objectives remove tls.dx
-scoreboard objectives remove tls.dz
-scoreboard objectives remove tls.progress
-scoreboard objectives remove tls.sort
-scoreboard objectives remove tls_Properties
-scoreboard objectives remove tls_Path
-scoreboard objectives remove tls_Mode
-scoreboard objectives remove tls_Toggle
+# Remove all sc oreboard
+scoreboard objectives remove config.const
+scoreboard objectives remove config.tmp
+scoreboard objectives remove config.val
+scoreboard objectives remove config.id
+scoreboard objectives remove config.toggle__start
+scoreboard objectives remove config.toggle__checkpoint
+scoreboard objectives remove config.toggle__finish
+scoreboard objectives remove config.path
+scoreboard objectives remove config.mode
+scoreboard objectives remove config.terrain
+scoreboard objectives remove config.rules
+scoreboard objectives remove config__Properties
+scoreboard objectives remove config__Path
+scoreboard objectives remove config__Mode
+scoreboard objectives remove config__Toggle
+scoreboard objectives remove br.const
+scoreboard objectives remove br.tmp
+scoreboard objectives remove br.val
+scoreboard objectives remove br.rank
+scoreboard objectives remove br.id
+scoreboard objectives remove br.record
+scoreboard objectives remove br.play_record
+scoreboard objectives remove br.item__pseudo
+scoreboard objectives remove br.nb__item__pseudo
+scoreboard objectives remove br.curr__time
+scoreboard objectives remove br.curr__ms
+scoreboard objectives remove br.curr__sec
+scoreboard objectives remove br.curr__min
+scoreboard objectives remove br.best__time
+scoreboard objectives remove br.best__ms
+scoreboard objectives remove br.best__sec
+scoreboard objectives remove br.best__min
+scoreboard objectives remove br.pos_x
+scoreboard objectives remove br.pos_z
+scoreboard objectives remove br.pos_ox
+scoreboard objectives remove br.pos_oz
+scoreboard objectives remove br.dx
+scoreboard objectives remove br.dz
+scoreboard objectives remove br.progress
+scoreboard objectives remove br.sort
 
+team remove config__bad
+team remove config__good
+team remove config__ghost
+
+# Reset player
 advancement revoke @a only config:tools/open open
 advancement revoke @a only config:tools/uninstall datapack
 advancement revoke @a only config:tools/undo undo 
@@ -58,55 +67,49 @@ advancement revoke @a only config:tools/mode/runner has_placed
 advancement revoke @a only config:tools/edit/terrain/pos_1 has_pos_1
 advancement revoke @a only config:tools/edit/terrain/pos_2 has_pos_2
 
-team remove tls_bad
-team remove tls_good
-team remove tls_ghost
-
-tag @a remove tls_stg__disable
-tag @a remove tls_stg__activate
-tag @a remove tls_stg__ghost_properties
-tag @a remove tls_stg__config
-tag @a remove tls_stg__confirm
-tag @a remove tls__edit_terrain__no_clone
-tag @a remove tls__edit_terrain__has_fill
-tag @a remove tls_target__start
-tag @a remove tls_target__checkpoint
-tag @a remove tls_target__finish
-tag @a remove tls_target__kart
-tag @a remove tls_target__boat
-tag @a remove tls_target__runner
-tag @a remove tls_target__path
-tag @a remove tls_target__
-tag @a remove tls_record__1
-tag @a remove tls_record__2
-tag @a remove tls_record__3
-tag @a remove tls_record__4
-tag @a remove tls_record__5
-tag @a remove tls_record__6
-tag @a remove tls_record__7
-tag @a remove tls_record__8
-tag @a remove tls_record__9
-tag @a remove tls_record__10
-tag @a remove tls_record__11
-tag @a remove tls_record__12
-tag @a remove tls_play_record__1
-tag @a remove tls_play_record__2
-tag @a remove tls_play_record__3
-tag @a remove tls_play_record__4
-tag @a remove tls_play_record__5
-tag @a remove tls_play_record__6
-tag @a remove tls_play_record__7
-tag @a remove tls_play_record__8
-tag @a remove tls_play_record__9
-tag @a remove tls_play_record__10
-tag @a remove tls_play_record__11
-tag @a remove tls_play_record__12
-tag @a remove tls_racer
-tag @a remove tls_has__ghost
-tag @a remove tls_has__lakitu
-tag @a remove tls_stg__closed
-tag @a remove tls_handler
-tag @a remove tls_handler__fix
+tag @a remove config__disable
+tag @a remove config__activate
+tag @a remove config__ghost_properties
+tag @a remove config.
+tag @a remove config__confirm
+tag @a remove config___edit__terrain__no_clone
+tag @a remove config___edit__terrain__has_fill
+tag @a remove config__target__start
+tag @a remove config__target__checkpoint
+tag @a remove config__target__finish
+tag @a remove config__target__kart
+tag @a remove config__target__boat
+tag @a remove config__target__runner
+tag @a remove config__target__path
+tag @a remove config__target.
+tag @a remove br__record__1
+tag @a remove br__record__2
+tag @a remove br__record__3
+tag @a remove br__record__4
+tag @a remove br__record__5
+tag @a remove br__record__6
+tag @a remove br__record__7
+tag @a remove br__record__8
+tag @a remove br__record__9
+tag @a remove br__record__10
+tag @a remove br__record__11
+tag @a remove br__record__12
+tag @a remove br__play_record__1
+tag @a remove br__play_record__2
+tag @a remove br__play_record__3
+tag @a remove br__play_record__4
+tag @a remove br__play_record__5
+tag @a remove br__play_record__6
+tag @a remove br__play_record__7
+tag @a remove br__play_record__8
+tag @a remove br__play_record__9
+tag @a remove br__play_record__10
+tag @a remove br__play_record__11
+tag @a remove br__play_record__12
+tag @a remove br__racer
+tag @a remove br__has__lakitu
+tag @a remove config__has__ghost
+tag @a remove config__close
 
 clear @a #config:config[custom_data={tools: {settings: 1b}, config: 1b}]
 clear @a #config:config[custom_data={tools: {nbt_weaver: 1b}, config: 1b}]
@@ -126,6 +129,7 @@ clear @a #config:config[custom_data={terrain: {clone: 1b}, config: 1b}]
 clear @a #config:config[custom_data={terrain: {fillbiome: 1b}, config: 1b}]
 clear @a #config:config[custom_data={pseudo: 1b, config: 1b}]
 
+# Remove all storage
 data remove storage config:settings start
 data remove storage config:settings finish
 data remove storage config:settings checkpoint
@@ -146,10 +150,11 @@ data remove storage config:inventory entity
 data remove storage config:inventory terrain
 data remove storage config:inventory tools
 data remove storage config:player rot
-data remove storage tls:racer id
-data remove storage tls:racer sort
+data remove storage br:racer id
+data remove storage br:racer sort
 
 
-datapack disable "file/track-lead-system"
-datapack disable "file/master-track-lead-system"
-datapack disable "file/main-track-lead-system"
+# Disable datapack
+datapack disable "file/lucky_games"
+datapack disable "file/master-lucky_games"
+datapack disable "file/main-lucky_games"

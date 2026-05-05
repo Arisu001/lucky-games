@@ -1,9 +1,9 @@
-# Track Lead System
+# Lucjy Games
 
 Config only in solo
 
 ### Install
-Copy the `track-lead-system` into the `datapack` folder of your folder.
+Copy the `lucky_games` into the `datapack` folder of your folder.
 
 
 ## Usage
@@ -14,7 +14,7 @@ Use compass to open the menu
 
 ### How to modify properties
 ```
-Right click on the dialog to config your run
+Right click on the dialog to config the minigames
 ```
 
 ### Uninstall

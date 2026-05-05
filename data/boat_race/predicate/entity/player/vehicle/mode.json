@@ -1,0 +1,17 @@
+{
+    "condition": "entity_properties",
+    "entity": "this",
+    "predicate": {
+        "vehicle": {
+            "type": "#global:vehicles",
+            "nbt": {
+                "Tags": ["br__mode"]
+            },
+            "passenger": {
+                "nbt": {
+                    "Tags": ["br__racer"]
+                }
+            }
+        }
+    }
+}

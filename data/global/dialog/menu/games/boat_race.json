@@ -1,0 +1,30 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Boat Race",
+		"color": "aqua"
+	},
+	"body": {
+		"type": "item",
+		"item": {
+			"id": "oak_boat",
+			"count": 1
+		},
+		"description": {
+			"text": "Config your race"
+		}
+	},
+	"can_close_with_escape": true,
+	"pause": true,
+	"after_action": "close",
+	"columns": 3,
+	"actions": [
+		{"label": {"text":  "Path", "color":         "aqua", "bold": true}, "action": {"type": "show_dialog", "dialog":  "global:menu/games/boat_race/path"}},
+		{"label": {"text":  "Mode", "color": "light_purple", "bold": true}, "action": {"type": "show_dialog", "dialog":  "global:menu/games/boat_race/mode"}},	
+		{"label": {"text": "Ghost", "color":         "gray", "bold": true}, "action": {"type": "show_dialog", "dialog": "global:menu/games/boat_race/ghost"}},
+		
+		{"label": {"text": 	         "Back to ", "extra": [{"text": "games ", "color":  "red", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog": "global:menu/games"}},
+		{"label": {"text": 		     "Back to ", "extra": [{"text":   "menu", "color": "gold", "italic": true}]},         "action": {"type": "show_dialog", "dialog":       "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																          "action": {"type": "show_dialog", "dialog":     "global:config"}}
+	]
+}

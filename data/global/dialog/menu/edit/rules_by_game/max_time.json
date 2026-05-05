@@ -1,0 +1,31 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Max Time",
+		"color": "#EF4444"
+	},
+	"body": {
+		"type": "item",
+		"item": {
+			"id": "clock"
+		}
+	},
+	"can_close_with_escape": true,
+	"pause": false,
+	"columns": 4,
+	"actions": [
+		{"label": {"text":        "Boat Race", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max time", "color":  "white"}], "color":    "aqua", "bold": true}, "action": {"type": "show_dialog", "dialog":        "global:menu/edit/rules_by_game/max_time/boat_race"}},
+		{"label": {"text":    "Burn Survival", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max time", "color":  "white"}], "color": "#FF4500", "bold": true}, "action": {"type": "show_dialog", "dialog":    "global:menu/edit/rules_by_game/max_time/burn_survival"}},
+		{"label": {"text":             "Golf", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max time", "color":  "white"}], "color": "#00C957", "bold": true}, "action": {"type": "show_dialog", "dialog":             "global:menu/edit/rules_by_game/max_time/golf"}},
+		{"label": {"text":      "Jump League", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max time", "color":  "white"}], "color": "#FFD700", "bold": true}, "action": {"type": "show_dialog", "dialog":      "global:menu/edit/rules_by_game/max_time/jump_league"}},
+		{"label": {"text":           "Spleef", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max time", "color":  "white"}], "color": "#DCDCDC", "bold": true}, "action": {"type": "show_dialog", "dialog":           "global:menu/edit/rules_by_game/max_time/spleef"}},
+		{"label": {"text":   "Survive Warden", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max time", "color":  "white"}], "color": "#0D7377", "bold": true}, "action": {"type": "show_dialog", "dialog":   "global:menu/edit/rules_by_game/max_time/survive_warden"}},
+		{"label": {"text":          "Thimble", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max time", "color":  "white"}], "color": "#DA70D6", "bold": true}, "action": {"type": "show_dialog", "dialog":          "global:menu/edit/rules_by_game/max_time/thimble"}},
+		{"label": {"text": "Trident Shooting", "extra": [{"text": ": ", "color": "yellow"}, {"text": "max time", "color":  "white"}], "color": "#6A0DAD", "bold": true}, "action": {"type": "show_dialog", "dialog": "global:menu/edit/rules_by_game/max_time/trident_shooting"}},
+		
+		{"label": {"text": 		     "Back to ", "extra": [{"text": "rules by game ", "color": "yellow", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog": "global:menu/edit/rules_by_game"}},
+		{"label": {"text": 	         "Back to ", "extra": [{"text":          "edit ", "color":   "gold", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog":               "global:menu/edit"}},
+		{"label": {"text": 		     "Back to ", "extra": [{"text":           "menu", "color":   "gold", "italic": true}]}, 		"action": {"type": "show_dialog", "dialog": 		   	       "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																				    "action": {"type": "show_dialog", "dialog":     	         "global:config"}}
+	]
+}

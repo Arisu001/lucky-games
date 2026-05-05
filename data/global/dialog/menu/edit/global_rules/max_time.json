@@ -1,0 +1,30 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Max Time",
+		"color": "#EF4444"
+	},
+	"body": {
+		"type": "item",
+		"item": {
+			"id": "clock"
+		}
+	},
+	"inputs": [
+		{"type": "number_range", "key":    "global__hour", "label":         "Hour", "start": 0, "end": 59, "step": 1, "initial":  0},
+		{"type": "number_range", "key":  "global__minute", "label":       "Minute", "start": 0, "end": 59, "step": 1, "initial": 30},
+		{"type": "number_range", "key": "global__seconde", "label":      "Seconde", "start": 0, "end": 59, "step": 1, "initial":  0},
+		{"type": "number_range", "key":    "global__tick", "label": "Milliseconde", "start": 0, "end": 20, "step": 1, "initial":  0}
+	],
+	"can_close_with_escape": true,
+	"pause": false,
+	"columns": 3,
+	"actions": [
+		{"label": {"text": "Confirm", "color": "green", "bold": true}, "action": {"type": "dynamic/run_command", "template": "function config:events/edit/rules/set_time/global {global__hour: \"$(global__hour)\", global__minute: \"$(global__minute)\", global__seconde: \"$(global__seconde)\", global__tick: \"$(global__tick)\", boat_race__hour: \"$(boat_race__hour)\", boat_race__minute: \"$(boat_race__minute)\", boat_race__seconde: \"$(boat_race__seconde)\", boat_race__tick: \"$(boat_race__tick)\", burn_survival__hour: \"$(burn_survival__hour)\", burn_survival__minute: \"$(burn_survival__minute)\", burn_survival__seconde: \"$(burn_survival__seconde)\", burn_survival__tick: \"$(burn_survival__tick)\", golf__hour: \"$(golf__hour)\", golf__minute: \"$(golf__minute)\", golf__seconde: \"$(golf__seconde)\", golf__tick: \"$(golf__tick)\", jump_league__hour: \"$(jump_league__hour)\", jump_league__minute: \"$(jump_league__minute)\", jump_league__seconde: \"$(jump_league__seconde)\", jump_league__tick: \"$(jump_league__tick)\", spleef__hour: \"$(spleef__hour)\", spleef__minute: \"$(spleef__minute)\", spleef__seconde: \"$(spleef__seconde)\", spleef__tick: \"$(spleef__tick)\", survive_warden__hour: \"$(survive_warden__hour)\", survive_warden__minute: \"$(survive_warden__minute)\", survive_warden__seconde: \"$(survive_warden__seconde)\", survive_warden__tick: \"$(survive_warden__tick)\", thimble__hour: \"$(thimble__hour)\", thimble__minute: \"$(thimble__minute)\", thimble__seconde: \"$(thimble__seconde)\", thimble__tick: \"$(thimble__tick)\", trident_shooting__hour: \"$(trident_shooting__hour)\", trident_shooting__minute: \"$(trident_shooting__minute)\", trident_shooting__seconde: \"$(trident_shooting__seconde)\", trident_shooting__tick: \"$(trident_shooting__tick)\"}"}},
+
+		{"label": {"text": 	         "Back to ", "extra": [{"text": "global rules ", "color": "gray", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog": "global:menu/edit/global_rules"}},
+		{"label": {"text": 	         "Back to ", "extra": [{"text":         "edit ", "color": "gold", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog":              "global:menu/edit"}},
+		{"label": {"text": 		     "Back to ", "extra": [{"text":          "menu", "color": "gold", "italic": true}]}, 		 "action": {"type": "show_dialog", "dialog":                   "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																				 "action": {"type": "show_dialog", "dialog":                 "global:config"}}
+	]
+}

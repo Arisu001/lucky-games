@@ -1,0 +1,21 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Burn Survival",
+		"color": "aqua"
+	},
+	"can_close_with_escape": true,
+	"pause": true,
+	"after_action": "close",
+	"columns": 3,
+	"actions": [
+		{"label": {"text": "Start",      "color": "green"},  "action": {"type": "run_command", "command": "trigger config__Path set 1"}},
+		{"label": {"text": "Checkpoint", "color":  "gold"},  "action": {"type": "run_command", "command": "trigger config__Path set 2"}},
+		{"label": {"text": "Finish",     "color":   "red"},  "action": {"type": "run_command", "command": "trigger config__Path set 3"}},
+		
+		{"label": {"text": 	         "Back to ", "extra": [{"text": "boat race ", "color": "aqua", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog": "global:menu/games/boat_race"}},
+		{"label": {"text": 	         "Back to ", "extra": [{"text":     "games ", "color":  "red", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog": 		    "global:menu/games"}},
+		{"label": {"text": 	         "Back to ", "extra": [{"text":       "menu", "color": "gold", "italic": true}]}, 		  "action": {"type": "show_dialog", "dialog": 			      "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																 		      "action": {"type": "show_dialog", "dialog":			    "global:config"}}
+	]
+}

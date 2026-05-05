@@ -1,0 +1,80 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Fill",
+		"color": "green"
+	},
+	"body": {
+		"type": "item",
+		"item": {
+			"id": "powder_snow_bucket"
+		}
+	},
+	"inputs": [
+		{
+			"type": "text",
+			"key": "fill_block",
+			"label": {
+				"text": "Block",
+				"color": "green"
+			},
+			"initial": "grass_block",
+			"max_length": 35
+		},
+		{
+			"type": "single_option",
+			"key": "fill_mode",
+			"label": {
+				"text": "Mode",
+				"color": "white"
+			},
+			"options": [
+				{"id": "destroy", "display": {"text": "Destroy", "color": "gray", "bold": true}, "initial": false},
+				{"id":  "hollow", "display": {"text":  "Hollow", "color": "gray", "bold": true}, "initial": false},
+				{"id":    "keep", "display": {"text":    "Keep", "color": "gray", "bold": true}, "initial": false},
+				{"id": "outline", "display": {"text": "Outline", "color": "gray", "bold": true}, "initial": false},
+				{"id": "replace", "display": {"text": "Replace", "color": "gray", "bold": true}, "initial": false},
+				{"id":  "strict", "display": {"text":  "Strict", "color": "gray", "bold": true}, "initial": false}
+			]
+		},
+		{
+			"type": "text",
+			"key": "replace_block",
+			"label": {
+				"text": "Only in ",
+				"color": "light_purple",
+				"extra": [
+					{"text": "Replace ", "color": "red"},
+					"mode"
+				]
+			},
+			"initial": "\"minecraft:stone\"",
+			"max_length": 35
+		},
+		{
+			"type": "single_option",
+			"key": "replace_mode",
+			"label": {
+				"text": "Mode",
+				"color": "white"
+			},
+			"options": [
+				{"id": "destroy", "display": {"text": "Destroy", "color": "gray", "bold": true}, "initial": false},
+				{"id":  "hollow", "display": {"text":  "Hollow", "color": "gray", "bold": true}, "initial": false},
+				{"id":    "keep", "display": {"text":    "Keep", "color": "gray", "bold": true}, "initial": false},
+				{"id":  "strict", "display": {"text":  "Strict", "color": "gray", "bold": true}, "initial": false}
+			]
+		}
+	],
+	"can_close_with_escape": true,
+	"pause": false,
+	"columns": 2,
+	"actions": [
+		{"label": {"text": "Confirm", "color": "green", "bold": true}, "action": {"type": "dynamic/run_command", "template": "function config:events/edit/terrain/fill {fill_block: \"$(fill_block)\", fill_mode: \"$(fill_mode)\", replace_block: \"$(replace_block)\", replace_mode: \"$(replace_mode)\"}"}},
+
+		{"label": {"text": 		     "Back to ", "extra": [{"text": "terrain ", "color": "#5DBB63", "italic":   true}, "menu"]}, "action": {"type": "show_dialog", "dialog": "global:menu/edit/terrain"}},
+		{"label": {"text": 		     "Back to ", "extra": [{"text":    "edit ", "color":    "gold", "italic":   true}, "menu"]}, "action": {"type": "show_dialog", "dialog": 		 "global:menu/edit"}},
+		{"label": {"text": 		     "Back to ", "extra": [{"text":     "menu", "color":    "gold", "italic": true}]}, 		     "action": {"type": "show_dialog", "dialog": 		 	  "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																				 "action": {"type": "show_dialog", "dialog":            "global:config"}}
+	]
+}

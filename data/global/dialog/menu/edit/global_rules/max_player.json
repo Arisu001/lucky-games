@@ -1,0 +1,35 @@
+{
+	"type": "multi_action",
+	"title": {
+		"text": "Max Players",
+		"color": "#60A5FA"
+	},
+	"body": {
+		"type": "item",
+		"item": {
+			"id": "player_head"
+		}
+	},
+	"inputs": [
+		{
+			"type": "number_range",
+			"key": "global__max_player",
+			"label": "Player",
+			"start": 2,
+			"end": 12,
+			"step": 1,
+			"initial": 9
+		}
+	],
+	"can_close_with_escape": true,
+	"pause": false,
+	"columns": 3,
+	"actions": [
+		{"label": {"text": "Confirm", "color": "green", "bold": true}, "action": {"type": "dynamic/run_command", "template": "function config:events/edit/rules/set_max_player {global: \"$(global__max_player)\", boat_race: \"$(boat_race__max_player)\", burn_survival: \"$(burn_survival__max_player)\", golf: \"$(golf__max_player)\", jump_league: \"$(jump_league__max_player)\", spleef: \"$(spleef__max_player)\", survive_warden: \"$(survive_warden__max_player)\", thimble: \"$(thimble__max_player)\", trident_shooting: \"$(trident_shooting__max_player)\"}"}},
+
+		{"label": {"text": 	         "Back to ", "extra": [{"text": "global rules ", "color": "gray", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog": "global:menu/edit/global_rules"}},
+		{"label": {"text": 	         "Back to ", "extra": [{"text":         "edit ", "color": "gold", "italic": true}, "menu"]}, "action": {"type": "show_dialog", "dialog":              "global:menu/edit"}},
+		{"label": {"text": 		     "Back to ", "extra": [{"text":          "menu", "color": "gold", "italic": true}]}, 		 "action": {"type": "show_dialog", "dialog":                   "global:menu"}},
+		{"label": {"text": "Back to main menu"}, 																				 "action": {"type": "show_dialog", "dialog":                 "global:config"}}
+	]
+}
