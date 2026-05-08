@@ -1,4 +1,4 @@
-# Lucjy Games
+# Lucky Games
 
 Config only in solo
 
